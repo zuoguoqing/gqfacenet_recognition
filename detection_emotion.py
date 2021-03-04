@@ -29,8 +29,9 @@ class predict_emotions:
             for box in boxes_face:
                 y0, x0, y1, x1 = box
                 face_image = img[x0:x1, y0:y1]
-                face_image = self.preprocess_img(face_image, cfg_rgb, cfg_with, cfg_height)
-                prediction = self.model.predict(face_image)
-                emotion = cfg_labels[prediction.argmax()]
-                emotions.append(emotion)
+                if face_image is not None:
+                    face_image = self.preprocess_img(face_image, cfg_rgb, cfg_with, cfg_height)
+                    prediction = self.model.predict(face_image)
+                    emotion = cfg_labels[prediction.argmax()]
+                    emotions.append(emotion)
         return emotions
