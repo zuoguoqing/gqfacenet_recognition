@@ -1,0 +1,5 @@
+FACE:
+  GPU_ID: -1
+  FACE_DB: "db_insightface"
+  THRESHOLD: 1.24
+  NMS: 0.50

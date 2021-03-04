@@ -1,0 +1,3 @@
+FACE:
+  FACE_DB: "db_facenet"
+  THRESHOLD: 1.05
